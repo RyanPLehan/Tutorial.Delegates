@@ -1,0 +1,57 @@
+﻿Real World Problem
+You call your utilities company about a problem.  When you call, there is a long wait before you get to speak to an agent.
+The automated process then asks if you would like an agent to contact you so that you do not need to wait.
+You agree and the automated process then asks your preference of how the agent should contact you:
+NOTE: You do not give any additional information such as phone number, email address, etc.  Your utilities company has that information.
+1. Use your preferred callback method from your profile
+2. Call back via your phone
+3. Text message to your phone
+4. Email
+5. Invoke an app on your phone to initiate a chat (Future functionality).  Works only if application is installed.
+
+
+Programming/Coding Problem
+Function (Foo) performs a commonly used pattern/routine but also contains specialtiy/custom code.  
+   Developer want to reuse that pattern/routine, so the developer generally does one of the following:
+   1.  Adds a parameter to the existing method as a branching mechanism to execute their custom code.
+		This clutters the code and goes against the principle that a method should do one and only one thing
+   2.  Copies Foo to a new function (CustomFoo) and replaces the custom code for their own.
+		This is problematic when having to modify the common pattern/routine.  all the copies need to be modified too.
+   3.  Refactors using classes.  Having Foo as the base method and then overrides the base method.
+		This generally violates the IS-A rule when it comes to inheritance.
+
+To alievate the problem, function (Foo) needs to developed so that the commonly used pattern/routine is in one area while
+   having the ability to invoke an arbitrary/random/custom process (callback function).
+
+Callback Function
+Is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+As opposed to referencing a data value, the argument references to executable code within memory.
+
+Programming Language
+Defines the callback mechanism
+
+	C/C++ Function Pointers
+		1. A function pointer points to code, not data. The function pointer points to executable code within memory.
+
+	C# (.Net) Delegate
+		1. A type that represents references to methods with a particular parameter list and return type.
+		2. Are similar to C++ function pointers, but delegates are fully object-oriented, and unlike C++ pointers to member functions, 
+		   delegates encapsulate both an object instance and a method.
+		3. Can be used to define callback methods.
+
+
+	delegate Keyword: Must explicity define the function reference type.
+		1.  Must have the proper accessibility scope (ie public)
+		2.  Must define the input parameters, if any
+			Parameters are defined as the same as a regulare function: CallBackFunction(int num, string msg)
+		3.  Must define the return type, if any
+
+	Action/Func Keywords: 
+		1.  They are delegates without the delegate keyword
+		2.  Parameters are define as generics Action<int, string>
+		2.	The function reference type is define inline with the outer function
+		3.  Each keyword defines if there is a return type or not
+			Action - Callback function does NOT return data
+			Func - Callback function returns data
+				Note: The last generic is the return data type
+
