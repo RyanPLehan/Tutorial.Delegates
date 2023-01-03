@@ -55,3 +55,6 @@ Defines the callback mechanism
 			Func - Callback function returns data
 				Note: The last generic is the return data type
 
+
+	Lambda Expressions
+		1.  Allow creating of Anonymous Function as inline code
