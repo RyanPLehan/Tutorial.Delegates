@@ -10,6 +10,11 @@ namespace Tutorial.Delegates
     {
         public static void Main(string[] args)
         {
+            // Lambda Expression Example
+            var dataset = Repository.GetData(1000);             // 1000 is data (integer literal)
+            var evenNumbers = dataset.Where(x => x % 2 == 0);   // x => x % 2 == 0 is not data but code in the form of a Lamba Expression
+
+
             // ExecuteProblemExamples();
             // ExecuteDelegateExamples();
             // ExecuteActionExamples();
