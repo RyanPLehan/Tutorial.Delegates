@@ -201,6 +201,11 @@ namespace Tutorial.Delegates
             Console.WriteLine("Odd Numbers: {0}", String.Join(", ", oddNumbers));
             Console.WriteLine();
 
+            var divisibleBy5 = PredicateCallback.MyWhere(dataset, delegate (int x) { return x % 5 == 0; });
+            Console.WriteLine("Numbers evenly divisible by 5: {0}", String.Join(", ", divisibleBy5));
+            Console.WriteLine();
+
+
             Console.WriteLine("Original Dataset: {0}", String.Join(", ", dataset));
             Console.WriteLine();
         }

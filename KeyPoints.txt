@@ -67,7 +67,7 @@ Defines the callback mechanism
 
 
 	Identifiers vs Anonymous
-		1.  Identifier is a name given to associate to some data or code (function).
+		1.  Identifier is a developer/user defined name used to associate to data or code (function).
 			The identifier is used to reference the data or function by name as needed.
 			int x = 5;		// int is the data type, x is the identifier, 5 is the data
 			public void Calculate()		// Calculate is the identifier associated with the code
@@ -79,5 +79,8 @@ Defines the callback mechanism
 
 	Lambda Expressions
 		1.  Allow creating of Anonymous Function as inline code
-		2.  Advantage over Identified Function
+		2.	Identifiers to the left of the => are the 'parameters'
+			More than 1 parameter needs to be enclosed by parenthesis
+			(x, y) => x * y / 2
+		3.  Advantage over Identified Function
 			Use of data defined outside of both the lambda expression and the function being invoked
