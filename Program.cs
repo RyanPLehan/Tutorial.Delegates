@@ -2,6 +2,7 @@
 using Tutorial.Delegates.ActionExamples;
 using Tutorial.Delegates.DelegateExamples;
 using Tutorial.Delegates.FuncExamples;
+using Tutorial.Delegates.LambdaExamples;
 using Tutorial.Delegates.ProblemExamples;
 
 namespace Tutorial.Delegates
@@ -11,8 +12,9 @@ namespace Tutorial.Delegates
         public static void Main(string[] args)
         {
             // Lambda Expression Example
-            var dataset = Repository.GetData(1000);             // 1000 is data (integer literal)
-            var evenNumbers = dataset.Where(x => x % 2 == 0);   // x => x % 2 == 0 is not data but code in the form of a Lambda Expression
+            var dataset = Repository.GetData(1000);                         // 1000 is data (integer literal)
+            var evenNumbers = dataset.Where(x => x % 2 == 0);               // x => x % 2 == 0 is not data but code in the form of a Lambda Expression
+            var oddNumbers = dataset.Where(x => { return x % 2 != 0; });    // Curly braces { } represents a block of code
 
 
             // ExecuteProblemExamples();
@@ -20,6 +22,7 @@ namespace Tutorial.Delegates
             // ExecuteActionExamples();
             // ExecuteFuncExamples();
             // ExecuteFuncAsyncExamples().GetAwaiter().GetResult();
+            // ExecuteLambdaExpressionExamples();
         }
 
         public static void ExecuteProblemExamples()
@@ -178,6 +181,41 @@ namespace Tutorial.Delegates
                 return await Task.FromResult<double>(dataset.Average(x => x));
             }));
 
+            Console.WriteLine();
+        }
+
+
+        public static void ExecuteLambdaExpressionExamples()
+        {
+            Console.WriteLine("Lambda Examples");
+
+            Console.WriteLine("Using a callback function");
+            // Original Example: Note the 2nd parameter (numberOfSpacesToIndent)
+            // ActionCallback.DisplayMessage(5, 1, "Hello there", ActionCallback.AppendPuncuationMarks);
+
+            LambdaCallback.DisplayMessage(5, "Hello there", LambdaCallback.AppendPuncuationMarks);
+            LambdaCallback.DisplayMessage(3, "WTF", LambdaCallback.AppendPuncuationMarks);
+            Console.WriteLine();
+
+            // Using the delegate keyword
+            Console.WriteLine("Using the delegate keyword as an Anonymous function");
+            /*
+            LambdaCallback.DisplayMessage(2, "Hello there", delegate (int numberOfSpacesToIndent, string msg)
+            {
+                string indent = new string(' ', numberOfSpacesToIndent);
+                Console.WriteLine("{0}{1}, from anonymous delegate", indent, msg);
+            });
+            Console.WriteLine();
+            */
+
+            // Using the delegate keyword
+            Console.WriteLine("Using the Lambda expression - Advantange of an outside variable");
+            int numberOfSpacesToIndent = 5;     // This is defined outside of the function, but used within the Lambda Expression
+            LambdaCallback.DisplayMessage(4, "Hello there", (msg) =>
+            {
+                string indent = new string(' ', numberOfSpacesToIndent);    // Used here
+                Console.WriteLine("{0}{1}, from lambda expression", indent, msg);
+            });
             Console.WriteLine();
         }
     }
