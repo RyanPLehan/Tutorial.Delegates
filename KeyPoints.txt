@@ -61,6 +61,11 @@ Defines the callback mechanism
 			Func - Callback function returns data
 				Note: The last generic is the return data type
 
+	Predicate Keyword:
+		1.	A simplified form of Func<T, bool>
+			Callback function that takes 1 parameter of type T and returns a boolean value (true/false)
+
+
 	Identifiers vs Anonymous
 		1.  Identifier is a name given to associate to some data or code (function).
 			The identifier is used to reference the data or function by name as needed.

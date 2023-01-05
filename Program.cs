@@ -3,6 +3,7 @@ using Tutorial.Delegates.ActionExamples;
 using Tutorial.Delegates.DelegateExamples;
 using Tutorial.Delegates.FuncExamples;
 using Tutorial.Delegates.LambdaExamples;
+using Tutorial.Delegates.PredicateExamples;
 using Tutorial.Delegates.ProblemExamples;
 
 namespace Tutorial.Delegates
@@ -22,6 +23,7 @@ namespace Tutorial.Delegates
             // ExecuteActionExamples();
             // ExecuteFuncExamples();
             // ExecuteFuncAsyncExamples().GetAwaiter().GetResult();
+            // ExecutePredicateExamples();
             // ExecuteLambdaExpressionExamples();
         }
 
@@ -181,6 +183,25 @@ namespace Tutorial.Delegates
                 return await Task.FromResult<double>(dataset.Average(x => x));
             }));
 
+            Console.WriteLine();
+        }
+
+
+        public static void ExecutePredicateExamples()
+        {
+            var dataset = Repository.GetData(50);
+
+            Console.WriteLine("Predicate Examples");
+
+            var evenNumbers = PredicateCallback.MyWhere(dataset, PredicateCallback.IsEven);
+            Console.WriteLine("Even Numbers: {0}", String.Join(", ", evenNumbers));
+            Console.WriteLine();
+
+            var oddNumbers = PredicateCallback.MyWhere(dataset, x => x % 2 != 0);
+            Console.WriteLine("Odd Numbers: {0}", String.Join(", ", oddNumbers));
+            Console.WriteLine();
+
+            Console.WriteLine("Original Dataset: {0}", String.Join(", ", dataset));
             Console.WriteLine();
         }
 
