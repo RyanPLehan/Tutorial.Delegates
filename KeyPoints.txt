@@ -9,6 +9,14 @@ NOTE: You do not give any additional information such as phone number, email add
 4. Email
 5. Invoke an app on your phone to initiate a chat (Future functionality).  Works only if application is installed.
 
+What a Callback is and is not
+	1.	Callback is a synchronous process.
+		The call waits for a response/completion from the callback routine
+	2.  Callback is not asynchronous/event based process
+		Like a Church bell - 
+		a.	When it rings, does not care if you hear it or not
+		b.	Does not care if you respond
+		c.	Bell can stop ringing before you hear it
 
 Programming/Coding Problem
 Function (Foo) performs a commonly used pattern/routine but also contains specialtiy/custom code.  
@@ -27,6 +35,7 @@ Callback Function
 Is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
 As opposed to referencing a data value, the argument references to executable code within memory.
 
+
 Questions....
 	1.  How do you pass code to a function?
 	2.  How does the code get executed?
@@ -38,6 +47,15 @@ Defines the callback mechanism
 
 	C/C++ Function Pointers
 		1.  A function pointer points to code, not data. The function pointer points to executable code within memory.
+			Just like a human reading a book.  Data is read in from source and stored in memory.
+		2.	Problem with Function Pointers - All based upon Assumptions
+			a.	Assumes the callback function has the proper parameters
+				1.	Number of parameters
+				2.	Correct data type
+				3.	In the right order
+			b.	Assumes the callback function returns the proper data type
+			c.	Assumes the developer of the callback function is honest and good in nature.
+				
 
 	C# (.Net) Delegate
 		1.  A type that represents references to methods with a particular parameter list and return type.
@@ -54,9 +72,11 @@ Defines the callback mechanism
 
 	Action/Func Keywords: 
 		1.  They are delegates without the delegate keyword
+			https://learn.microsoft.com/en-us/dotnet/api/system.action-1?view=net-7.0
+			https://learn.microsoft.com/en-us/dotnet/api/system.func-2?view=net-7.0
 		2.  Parameters are define as generics Action<int, string>
-		2.	The function reference type is define inline with the outer function
-		3.  Each keyword defines if there is a return type or not
+		3.	The function reference type is define inline with the outer function
+		4.  Each keyword defines if there is a return type or not
 			Action - Callback function does NOT return data
 			Func - Callback function returns data
 				Note: The last generic is the return data type
@@ -64,6 +84,7 @@ Defines the callback mechanism
 	Predicate Keyword:
 		1.	A simplified form of Func<T, bool>
 			Callback function that takes 1 parameter of type T and returns a boolean value (true/false)
+			https://learn.microsoft.com/en-us/dotnet/api/system.predicate-1?view=net-7.0
 
 
 	Identifiers vs Anonymous

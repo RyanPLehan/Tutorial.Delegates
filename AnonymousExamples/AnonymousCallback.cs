@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tutorial.Delegates.LambdaExamples
 {
-    internal class LambdaCallback
+    internal class AnonymousCallback
     {
         /// <summary>
         /// This is the original function Foo that has a common routine and a custom calculation routine
