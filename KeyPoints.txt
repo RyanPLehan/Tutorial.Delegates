@@ -13,10 +13,7 @@ What a Callback is and is not
 	1.	Callback is a synchronous process.
 		The call waits for a response/completion from the callback routine
 	2.  Callback is not asynchronous/event based process
-		Like a Church bell - 
-		a.	When it rings, does not care if you hear it or not
-		b.	Does not care if you respond
-		c.	Bell can stop ringing before you hear it
+		It is not a fire and forget
 
 Programming/Coding Problem
 Function (Foo) performs a commonly used pattern/routine but also contains specialtiy/custom code.  
