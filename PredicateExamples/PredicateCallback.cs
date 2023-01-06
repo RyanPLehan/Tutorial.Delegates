@@ -14,6 +14,10 @@ namespace Tutorial.Delegates.PredicateExamples
         /// <param name="size"></param>
         /// <param name="removeEveryOther"></param>
         /// <param name="callbackFunction">References a function that performs the custom calcuation</param>
+        /// <remarks>
+        /// Link to .Net Linq source code
+        /// https://github.com/microsoft/referencesource/blob/master/System.Core/System/Linq/Enumerable.cs
+        /// </remarks>
         /// <returns></returns>
         public static IEnumerable<int> MyWhere(IEnumerable<int> dataset, Predicate<int> callbackFunction)
         {
