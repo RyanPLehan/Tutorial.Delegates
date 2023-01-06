@@ -20,6 +20,9 @@ namespace Tutorial.Delegates.ActionExamples
             {
                 // invoke the custom callback function
                 callbackFunction(numberOfSpacesToIndent, message);
+
+                // Note: Since Action does not return data, so you cannot have a statement such as the following
+                //var x = callbackFunction(numberOfSpacesToIndent, message);
             }
         }
 
