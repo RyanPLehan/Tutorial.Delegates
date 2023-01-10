@@ -3,17 +3,16 @@ You call your utilities company about a problem.  When you call, there is a long
 The automated process then asks if you would like an agent to contact you so that you do not need to wait.
 You agree and the automated process then asks your preference of how the agent should contact you:
 NOTE: You do not give any additional information such as phone number, email address, etc.  Your utilities company has that information.
-1. Use your preferred callback method from your profile
-2. Call back via your phone
-3. Text message to your phone
-4. Email
-5. Invoke an app on your phone to initiate a chat (Future functionality).  Works only if application is installed.
+1. Call back via your phone
+2. Text message to your phone
+3. Email - Link to chat on website
+4. Invoke an app on your phone to initiate a chat (Future functionality).  Works only if application is installed.
 
-What a Callback is and is not
-	1.	Callback is a synchronous process.
-		The call waits for a response/completion from the callback routine
-	2.  Callback is not asynchronous/event based process
-		It is not a fire and forget
+
+Characteristics
+	1.	Set of common steps
+	2.	At least one step that differs / Custom
+
 
 Programming/Coding Problem
 Function (Foo) performs a commonly used pattern/routine but also contains specialtiy/custom code.  
@@ -27,6 +26,13 @@ Function (Foo) performs a commonly used pattern/routine but also contains specia
 
 To alievate the problem, function (Foo) needs to developed so that the commonly used pattern/routine is in one area while
    having the ability to invoke an arbitrary/random/custom process (callback function).
+
+What a Callback is and is not
+	1.	Callback is a synchronous process.
+		The call waits for a response/completion from the callback routine
+	2.  Callback is not asynchronous/event based process
+		It is not a fire and forget
+
 
 Callback Function
 Is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
